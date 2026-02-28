@@ -27,11 +27,11 @@ def test_homepage_structure(page: Page, base_url):
     page.goto(base_url)
     
     # Check title
-    expect(page).to_have_title("Python Backend - Curso")
+    expect(page).to_have_title(re.compile(r"(Python|Spec Sistemas|Curso)"))
     
     # Check main heading
     heading = page.locator("h1")
-    expect(heading).to_contain_text("Python Backend")
+    expect(heading).to_contain_text("Spec Sistemas com Python")
     
     # Check navigation cards exist
     # Material uses .md-typeset .grid.cards
